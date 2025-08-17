@@ -44,6 +44,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>true</CLRSupport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -125,7 +126,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MenuForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Character\Character.vcxproj">
@@ -137,6 +138,23 @@
     <ProjectReference Include="..\MapObject\MapObject.vcxproj">
       <Project>{f136c459-b413-4531-8ad9-5018860c9117}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MenuForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MenuForm.resx">
+      <DependentUpon>MenuForm.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
