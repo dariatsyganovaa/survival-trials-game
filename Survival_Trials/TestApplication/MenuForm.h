@@ -1,4 +1,5 @@
 #pragma once
+#include "SettingsForm.h"
 
 namespace TestApplication {
 
@@ -37,7 +38,9 @@ namespace TestApplication {
 	private: System::Windows::Forms::Button^ exit;
 	private: System::Windows::Forms::Button^ settings;
 	private: System::Windows::Forms::Button^ play;
-	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ name_game;
+
+
 
 
 
@@ -63,11 +66,13 @@ namespace TestApplication {
 			this->exit = (gcnew System::Windows::Forms::Button());
 			this->settings = (gcnew System::Windows::Forms::Button());
 			this->play = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->name_game = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// exit
 			// 
+			this->exit->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->exit->AutoSize = true;
 			this->exit->BackColor = System::Drawing::SystemColors::ActiveBorder;
 			this->exit->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"exit.BackgroundImage")));
 			this->exit->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
@@ -85,6 +90,8 @@ namespace TestApplication {
 			// 
 			// settings
 			// 
+			this->settings->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->settings->AutoSize = true;
 			this->settings->BackColor = System::Drawing::SystemColors::ActiveBorder;
 			this->settings->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"settings.BackgroundImage")));
 			this->settings->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
@@ -102,6 +109,8 @@ namespace TestApplication {
 			// 
 			// play
 			// 
+			this->play->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
+			this->play->AutoSize = true;
 			this->play->BackColor = System::Drawing::SystemColors::ActiveBorder;
 			this->play->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"play.BackgroundImage")));
 			this->play->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
@@ -116,20 +125,21 @@ namespace TestApplication {
 			this->play->Text = L"ÈÃÐÀÒÜ";
 			this->play->UseVisualStyleBackColor = false;
 			// 
-			// label1
+			// name_game
 			// 
-			this->label1->AutoSize = true;
-			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Sitka Subheading", 28.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::SaddleBrown;
-			this->label1->Location = System::Drawing::Point(258, 9);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(741, 136);
-			this->label1->TabIndex = 3;
-			this->label1->Text = L"ËÅÃÅÍÄÛ ÇÀÁÛÒÛÕ ÌÈÐÎÂ:\r\nÈÑÏÛÒÀÍÈß ÍÀ ÂÛÆÈÂÀÍÈÅ\r\n";
-			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->label1->Click += gcnew System::EventHandler(this, &MenuForm::label1_Click);
+			this->name_game->Anchor = System::Windows::Forms::AnchorStyles::Top;
+			this->name_game->AutoSize = true;
+			this->name_game->BackColor = System::Drawing::Color::Transparent;
+			this->name_game->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->name_game->ForeColor = System::Drawing::SystemColors::ActiveBorder;
+			this->name_game->Location = System::Drawing::Point(122, 9);
+			this->name_game->Name = L"name_game";
+			this->name_game->Size = System::Drawing::Size(936, 243);
+			this->name_game->TabIndex = 3;
+			this->name_game->Text = L"ËÅÃÅÍÄÛ ÇÀÁÛÒÛÕ ÌÈÐÎÂ:\r\nÈÑÏÛÒÀÍÈß ÍÀ ÂÛÆÈÂÀÍÈÅ\r\n";
+			this->name_game->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->name_game->Click += gcnew System::EventHandler(this, &MenuForm::label1_Click);
 			// 
 			// MenuForm
 			// 
@@ -138,7 +148,7 @@ namespace TestApplication {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1200, 672);
-			this->Controls->Add(this->label1);
+			this->Controls->Add(this->name_game);
 			this->Controls->Add(this->play);
 			this->Controls->Add(this->settings);
 			this->Controls->Add(this->exit);
@@ -161,6 +171,8 @@ namespace TestApplication {
 	private: System::Void MenuForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void settings_Click(System::Object^ sender, System::EventArgs^ e) {
+		SettingsForm^ myForm = gcnew SettingsForm(); 
+		myForm->Show();
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
