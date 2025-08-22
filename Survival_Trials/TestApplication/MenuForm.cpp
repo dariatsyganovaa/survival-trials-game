@@ -1,5 +1,6 @@
 #include "MenuForm.h"
 #include "SettingsForm.h"
+#include "GameForm.h"
 
 using namespace System;
 using namespace System::Windows::Forms;

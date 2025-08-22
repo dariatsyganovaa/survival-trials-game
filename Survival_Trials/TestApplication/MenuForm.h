@@ -1,5 +1,6 @@
 #pragma once
 #include "SettingsForm.h"
+#include "GameForm.h"
 
 namespace TestApplication {
 
@@ -124,6 +125,7 @@ namespace TestApplication {
 			this->play->TabIndex = 2;
 			this->play->Text = L"ÈÃÐÀÒÜ";
 			this->play->UseVisualStyleBackColor = false;
+			this->play->Click += gcnew System::EventHandler(this, &MenuForm::play_Click);
 			// 
 			// name_game
 			// 
@@ -135,7 +137,7 @@ namespace TestApplication {
 			this->name_game->ForeColor = System::Drawing::SystemColors::ActiveBorder;
 			this->name_game->Location = System::Drawing::Point(122, 9);
 			this->name_game->Name = L"name_game";
-			this->name_game->Size = System::Drawing::Size(936, 243);
+			this->name_game->Size = System::Drawing::Size(1024, 162);
 			this->name_game->TabIndex = 3;
 			this->name_game->Text = L"ËÅÃÅÍÄÛ ÇÀÁÛÒÛÕ ÌÈÐÎÂ:\r\nÈÑÏÛÒÀÍÈß ÍÀ ÂÛÆÈÂÀÍÈÅ\r\n";
 			this->name_game->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -176,5 +178,9 @@ namespace TestApplication {
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+	private: System::Void play_Click(System::Object^ sender, System::EventArgs^ e) {
+		GameForm^ myForm = gcnew GameForm();
+		myForm->Show();
+	}
+};
 }
