@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{7525a020-9b38-47d3-834a-8c2441f4a296}</ProjectGuid>
-    <RootNamespace>TestApplication</RootNamespace>
+    <ProjectGuid>{c064c55c-8cba-4eb5-a4be-60ace599da26}</ProjectGuid>
+    <RootNamespace>GameField</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -41,11 +40,10 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
-    <CLRSupport>true</CLRSupport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -104,12 +102,10 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\GitHub\survival-trials-game\Survival_Trials\GameField;C:\GitHub\survival-trials-game\Survival_Trials\MapObject;C:\GitHub\survival-trials-game\Survival_Trials\GameObject;C:\GitHub\survival-trials-game\Survival_Trials\Character;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\GitHub\survival-trials-game\Survival_Trials\GameField;C:\GitHub\survival-trials-game\Survival_Trials\MapObject;C:\GitHub\survival-trials-game\Survival_Trials\GameObject;C:\GitHub\survival-trials-game\Survival_Trials\Character;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -127,52 +123,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GameForm.cpp" />
-    <ClCompile Include="MenuForm.cpp" />
-    <ClCompile Include="SettingsForm.cpp" />
+    <ClCompile Include="gamefield.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Character\Character.vcxproj">
-      <Project>{cefd22fa-2f4b-4223-bdc0-812d19e93456}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\GameField\GameField.vcxproj">
-      <Project>{c064c55c-8cba-4eb5-a4be-60ace599da26}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\GameObject\GameObject.vcxproj">
-      <Project>{a895ffd5-3574-4c67-b420-303421501223}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\MapObject\MapObject.vcxproj">
-      <Project>{f136c459-b413-4531-8ad9-5018860c9117}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="GameForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="MenuForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="SettingsForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="GameForm.resx">
-      <DependentUpon>GameForm.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuForm.resx">
-      <DependentUpon>MenuForm.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingsForm.resx">
-      <DependentUpon>SettingsForm.h</DependentUpon>
-    </EmbeddedResource>
+    <ClInclude Include="gamefield.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
