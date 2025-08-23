@@ -134,7 +134,7 @@ namespace TestApplication {
 			this->name_game->BackColor = System::Drawing::Color::Transparent;
 			this->name_game->Font = (gcnew System::Drawing::Font(L"Palatino Linotype", 36, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->name_game->ForeColor = System::Drawing::SystemColors::ActiveBorder;
+			this->name_game->ForeColor = System::Drawing::Color::SaddleBrown;
 			this->name_game->Location = System::Drawing::Point(122, 9);
 			this->name_game->Name = L"name_game";
 			this->name_game->Size = System::Drawing::Size(1024, 162);
